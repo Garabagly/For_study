@@ -1,0 +1,15 @@
+1.net user suser "Пароль"
+2.netsh advfirewall firewall add rule name="Для oracle" dir=in action=allow protocol=TCP localport=1521
+3.netsh advfirewall firewall add rule name="Для postgre" dir=in action=allow protocol=TCP localport=5432
+4.net user Oracle /add
+net user Oracle "Пароль"
+5.xcopy /y /o /e "\\10.24.91.10\dsr\*(тут табаем нужные файлы и по одному качаем так быстрее)*" "C:\dsr"
+6.mkdir C:\DB 
+mkdir C:\DB\Oracle 
+mkdir C:\DB\Postgre
+7.powershell
+Expand-Archive C:\dsr\winx64_12201_database.zip -DestinationPath C:\DB\Oracle
+8.cd C:\DB\Oracle\database
+start setup.exe
+9.cd C:\dsr
+10.start post.exe
